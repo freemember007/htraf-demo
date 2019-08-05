@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> HTRAF Demo </title>
+    <script type="text/javascript"
+            src="../htraf/htraf.js"
+            data-htsql-version="2"
+            data-htsql-prefix="https://ddys-book.diandianys.com/query-internal/">
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/htraf-02.css"/>
+</head>
+
+<body>
+
+    <h3>tj_ord_pat</h3>
+    <table data-htsql="/book_order
+    ? order_state='0' & date(create_time) > today()-30
+          ^(date(book_patient_zjplat.ctime) > today()-30 :as is_new){
+            switch(is_new, true, '30天内注册', false, '30天前注册') :as 用户类型,
+                  ^:count :as 预约数
+          }.sort(is_new-) :as 最近30天预约">
+</table>
+
+</body>
+
+</html>

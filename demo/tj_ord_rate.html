@@ -13,12 +13,17 @@
 
 <body>
 
-    <h3>tj_zpat</h3>
-    <table data-htsql="/_zpat^stat{stat:as 状态, ^:count:as 数量}"> </table>
+    <h3>tj_ord_rate</h3>
+    <table data-htsql="/book_order
+    ? date(create_time) > today()-7
+    ^ (date(create_time) :as 日期){
+        日期-,
+        ^?order_state!==null():count:as 挂号成功数,
+        ^?order_state==null()|order_state=='':count:as 挂号失败数,
+        ^:count :as 总挂号数,
+    }">
+    </table>
 
-<!--     <h3>zpat</h3>
-    <table data-htsql="/_zpat">
- -->
 </body>
 
 </html>

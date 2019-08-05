@@ -13,12 +13,12 @@
 
 <body>
 
-    <h3>tj_zpat</h3>
-    <table data-htsql="/_zpat^stat{stat:as 状态, ^:count:as 数量}"> </table>
+    <h3>_adv_consult</h3>
+    <table data-htsql="/adv_consult{
+      consult_id, user_id, patient_name, user_sex, user_age, user_mobile, adv_doc_id, dept_code, head(consult_content,10), !!consult_img, consult_type, price, pay_status, consult_status, reply_time, grab_time, end_time, create_time-
+    }">
+</table>
 
-<!--     <h3>zpat</h3>
-    <table data-htsql="/_zpat">
- -->
 </body>
 
 </html>

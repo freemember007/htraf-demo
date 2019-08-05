@@ -13,12 +13,10 @@
 
 <body>
 
-    <h3>tj_zpat</h3>
-    <table data-htsql="/_zpat^stat{stat:as 状态, ^:count:as 数量}"> </table>
+    <h3>tj_medical</h3>
+    <table data-htsql="/medical_order?medical_status='1'^(date(create_time):as 订单日期){订单日期-, ^:count:as 订单数, ^.actual_amount:sum:as 付费统计}:as 体检订单统计">
+</table>
 
-<!--     <h3>zpat</h3>
-    <table data-htsql="/_zpat">
- -->
 </body>
 
 </html>

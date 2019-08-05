@@ -2,7 +2,14 @@
 <html>
 
     <head>
-        <title></title>
+        <title>HTSQL报表系统</title>
+    <script type="text/javascript"
+            src="../htraf/htraf.js"
+            data-htsql-version="2"
+            data-htsql-prefix="http://localhost:5057/">
+    </script>
+    <link rel="stylesheet" type="text/css" href="css/htraf-02.css"/>
+
         <script>
             function IFrameResize(){
                 var obj = document.getElementById("childFrame")
@@ -30,25 +37,42 @@
     <body>
         <div>
             <div style="display: flex; height: 100%">
-                <div style="width: 10vw">
-                    menu
-                    <div style="font-size: 12px">
-                        <div onclick="changeIframe(this, 'tj_zpat')">实名认证统计</div>
-                        <div onclick="changeIframe(this, '_ord')">预约挂号统计</div>
-                        <div onclick="changeIframe(this)">每日IP挂号排行</div>
-                        <div onclick="changeIframe(this)">预约情况统计</div>
-                        <div onclick="changeIframe(this)">预约挂号月报表</div>
-                        <div onclick="changeIframe(this)">预约挂号月报表</div>
-                        <div onclick="changeIframe(this)">预约数按用户注册时间分布</div>
-                        <div onclick="changeIframe(this)">预约成功率统计</div>
-                        <div onclick="changeIframe(this)">就诊人月报</div>
-                        <div onclick="changeIframe(this)">体检订单统计</div>
-                        <div onclick="changeIframe(this)">咨询统计</div>
+                <div style="width: 15vw; margin:0 10px; ">
+                    <h4>
+                        日报表
+                    </h4>
+                    <div style="font-size: 14px; cursor: pointer;">
+                        <p onclick="changeIframe(this, 'tj_ord')">预约挂号日报</p>
+                        <p onclick="changeIframe(this, 'tj_ord_ip')">每日IP挂号排行</p>
+                        <p onclick="changeIframe(this, 'tj_ord_rate')">预约成功率统计</p>
+                        <p onclick="changeIframe(this, 'tj_medical')">体检订单日报</p>
+                    </div>
+                    <h4>
+                        月报表
+                    </h4>
+                    <div style="font-size: 14px; cursor: pointer;">
+                        <p onclick="changeIframe(this, 'tj_ord_month')">预约挂号月报表</p>
+                        <p onclick="changeIframe(this, 'tj_ord_pat')">预约数按用户注册时间分布</p>
+                        <p onclick="changeIframe(this, 'tj_zpat_month')">就诊人月报</p>
+                    </div>
+                    <h4>
+                        汇总表
+                    </h4>
+                    <div style="font-size: 14px; cursor: pointer;">
+                        <p onclick="changeIframe(this, 'tj_zpat')">实名认证统计</p>
+                    </div>
+                    <h4>
+                        常用查询
+                    </h4>
+                    <div style="font-size: 14px; cursor: pointer;">
+                        <p onclick="changeIframe(this, '_zpat')">就诊人查询</p>
+                        <p onclick="changeIframe(this, '_adv_consult')">咨询订单查询</p>
+                        <p onclick="changeIframe(this, '_fb')">用户反馈查询</p>
                     </div>
                 </div>
                 <iframe
                     id="childFrame"
-                    src="./demo/index.html"
+                    src="./demo/demo.html"
                     frameborder="0"
                     scrolling="auto"
                     width="100%"
@@ -56,7 +80,6 @@
                     onload="IFrameResize()"
                 >
                 </iframe>
-                <!-- <div onclick="changeIframe(this)">click</button> -->
             </div>
         </div>
     </body>

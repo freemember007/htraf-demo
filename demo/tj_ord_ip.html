@@ -13,12 +13,10 @@
 
 <body>
 
-    <h3>tj_zpat</h3>
-    <table data-htsql="/_zpat^stat{stat:as 状态, ^:count:as 数量}"> </table>
+    <h3>tj_ord_ip</h3>
+    <table data-htsql="/book_order?date(create_time)=today()^book_ip{book_ip :as IP地址, ^:count :as 挂号数-}">
+    </table>
 
-<!--     <h3>zpat</h3>
-    <table data-htsql="/_zpat">
- -->
 </body>
 
 </html>
